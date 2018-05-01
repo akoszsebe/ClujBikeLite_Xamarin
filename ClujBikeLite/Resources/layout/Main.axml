@@ -3,22 +3,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:text="Button"
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_sendReq" />
-  <android.support.v4.widget.SwipeRefreshLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_paren"
-      android:id="@+id/refresher">
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-      <ListView
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:id="@+id/listViewStations" />
-    </FrameLayout>
-  </android.support.v4.widget.SwipeRefreshLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/refresher">
+        <FrameLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frameLayout1">
+            <ListView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listViewStations" />
+        </FrameLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
