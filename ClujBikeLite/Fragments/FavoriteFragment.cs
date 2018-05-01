@@ -19,6 +19,7 @@ namespace ClujBikeLite.Fragments
         private ListView mlistview { get; set; }
         private MyStationListAdapter adapter { get; set; }
         private Android.Support.V4.Widget.SwipeRefreshLayout refresher { get; set; }
+        private Thread syncThread { get;  set; }
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,64 +43,54 @@ namespace ClujBikeLite.Fragments
             mlistview = view.FindViewById<ListView>(Resource.Id.listViewStations);
             refresher = view.FindViewById<Android.Support.V4.Widget.SwipeRefreshLayout>(Resource.Id.refresher);
 
-            adapter = new MyStationListAdapter(this.Activity,true);
+            adapter = new MyStationListAdapter(this.Activity, true);
             mlistview.Adapter = adapter;
 
-            ISharedPreferences sharedPref = Activity.GetSharedPreferences("favorite_stations", FileCreationMode.Private);
-            ICollection<string> favorite_stations = sharedPref.GetStringSet("favorite_stations", new List<string>());
 
             refresher.Refresh += delegate
             {
-                new Thread(new ThreadStart(() =>
-                {
-                    List<ListViewItemStation> items;
-                    Station[] stations;
-                    stations = RestClient.GetStationsData().Data;
-                    items = new List<ListViewItemStation>();
-                    Activity.RunOnUiThread(() =>
-                    {
-                        for (int i = 0; i < stations.Length; i++)
-                        {
-                            if (favorite_stations.Contains(stations[i].StationName))
-                            {
-                                items.Add(new ListViewItemStation(i, stations[i],true));
-                            }
-                        }
-                        adapter.AddData(items);
-                        adapter.NotifyDataSetChanged();
-                        refresher.Refreshing = false;
-                    });
-                })).Start();
+                SyncData();
+                refresher.Refreshing = false;
             };
 
+            SyncData();
 
-            new Thread(new ThreadStart(() =>
+            return view;
+        }
+
+        public void SyncData()
+        {
+            ISharedPreferences sharedPref = Activity.GetSharedPreferences("favorite_stations", FileCreationMode.Private);
+            ICollection<string> favorite_stations = sharedPref.GetStringSet("favorite_stations", new List<string>());
+
+            syncThread = new Thread(new ThreadStart(() =>
             {
                 List<ListViewItemStation> items;
                 Station[] stations;
-                var data = RestClient.GetStationsData();
-                if (data != null)
+                stations = RestClient.GetStationsData().Data;
+                items = new List<ListViewItemStation>();
+                Activity.RunOnUiThread(() =>
                 {
-                    stations = data.Data;
-                    items = new List<ListViewItemStation>();
-                    Activity.RunOnUiThread(() =>
+                    for (int i = 0; i < stations.Length; i++)
                     {
-
-                        for (int i = 0; i < stations.Length; i++)
+                        if (favorite_stations.Contains(stations[i].StationName))
                         {
-                            if (favorite_stations.Contains(stations[i].StationName))
-                            {
-                                items.Add(new ListViewItemStation(i, stations[i],true));
-                            }
+                            items.Add(new ListViewItemStation(i, stations[i], true));
                         }
-                        adapter.AddData(items);
-                        adapter.NotifyDataSetChanged();
-                    });
-                }
-            })).Start();
+                    }
+                    adapter.AddData(items);
+                    adapter.NotifyDataSetChanged();
+                    refresher.Refreshing = false;
+                });
+            }));
+            syncThread.Start();
+        }
 
-
-            return view;
+        public override void OnDestroy()
+        {
+            if (syncThread != null)
+                syncThread.Abort();
+            base.OnDestroy();
         }
     }
 }

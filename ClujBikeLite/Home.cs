@@ -14,6 +14,8 @@ namespace ClujBikeLite
     public class Home : AppCompatActivity
     {
         BottomNavigationView bottomNavigation;
+        Android.Support.V4.App.Fragment fragment = null;
+
         protected override void OnCreate(Bundle bundle)
         {
 
@@ -22,9 +24,9 @@ namespace ClujBikeLite
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             if (toolbar != null)
             {
-                SetSupportActionBar(toolbar);
-                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
-                SupportActionBar.SetHomeButtonEnabled(false);
+                //SetSupportActionBar(toolbar);
+                //SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+                //SupportActionBar.SetHomeButtonEnabled(false);
 
             }
 
@@ -38,12 +40,15 @@ namespace ClujBikeLite
 
         private void BottomNavigation_NavigationItemSelected(object sender, BottomNavigationView.NavigationItemSelectedEventArgs e)
         {
+            if (fragment != null)
+            {
+                fragment.OnDestroy();
+            }
             LoadFragment(e.Item.ItemId);
         }
 
         void LoadFragment(int id)
         {
-            Android.Support.V4.App.Fragment fragment = null;
             switch (id)
             {
                 case Resource.Id.menu_all:
