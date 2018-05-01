@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace ClujBikeLite
 {
-    [Activity(Label = "ClujBikeLite", MainLauncher = true)]
+    [Activity(Label = "ClujBikeLite", MainLauncher = true, Icon = "@drawable/icon")]
     public class Home : AppCompatActivity
     {
         BottomNavigationView bottomNavigation;
