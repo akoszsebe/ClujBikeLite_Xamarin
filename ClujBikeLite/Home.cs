@@ -24,9 +24,9 @@ namespace ClujBikeLite
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             if (toolbar != null)
             {
-                //SetSupportActionBar(toolbar);
-                //SupportActionBar.SetDisplayHomeAsUpEnabled(false);
-                //SupportActionBar.SetHomeButtonEnabled(false);
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+                SupportActionBar.SetHomeButtonEnabled(false);
 
             }
 

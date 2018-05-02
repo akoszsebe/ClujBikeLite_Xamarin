@@ -12,12 +12,12 @@
 
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">@color/primaryDark</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">@color/accent</item>
+    <item name="colorAccent">@color/colorAccent</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
 
@@ -29,10 +29,4 @@
     -->
   </style>
 
-  <style name="Theme.MyTheme.ActionBar" parent="style/Widget.AppCompat.Light.ActionBar.Solid">
-    <!-- remove shadow below action bar -->
-    <!-- <item name="android:elevation">0dp</item> -->
-    <!-- Support library compatibility -->
-    <item name="elevation">0dp</item>
-  </style>
 </resources>

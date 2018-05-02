@@ -67,21 +67,25 @@ namespace ClujBikeLite.Fragments
             {
                 List<ListViewItemStation> items;
                 Station[] stations;
-                stations = RestClient.GetStationsData().Data;
-                items = new List<ListViewItemStation>();
-                Activity.RunOnUiThread(() =>
+                var data = RestClient.GetStationsData();
+                if (data != null)
                 {
-                    for (int i = 0; i < stations.Length; i++)
+                    stations = data.Data;
+                    items = new List<ListViewItemStation>();
+                    Activity.RunOnUiThread(() =>
                     {
-                        if (favorite_stations.Contains(stations[i].StationName))
+                        for (int i = 0; i < stations.Length; i++)
                         {
-                            items.Add(new ListViewItemStation(i, stations[i], true));
+                            if (favorite_stations.Contains(stations[i].StationName))
+                            {
+                                items.Add(new ListViewItemStation(i, stations[i], true));
+                            }
                         }
-                    }
-                    adapter.AddData(items);
-                    adapter.NotifyDataSetChanged();
-                    refresher.Refreshing = false;
-                });
+                        adapter.AddData(items);
+                        adapter.NotifyDataSetChanged();
+                        refresher.Refreshing = false;
+                    });
+                }
             }));
             syncThread.Start();
         }

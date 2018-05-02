@@ -1175,17 +1175,11 @@ namespace ClujBikeLite
 			// aapt resource value: 0x7f0c0064
 			public const int abc_tint_switch_track = 2131492964;
 			
-			// aapt resource value: 0x7f0c0049
-			public const int accent = 2131492937;
-			
 			// aapt resource value: 0x7f0c0005
 			public const int accent_material_dark = 2131492869;
 			
 			// aapt resource value: 0x7f0c0006
 			public const int accent_material_light = 2131492870;
-			
-			// aapt resource value: 0x7f0c004f
-			public const int activated_color = 2131492943;
 			
 			// aapt resource value: 0x7f0c0007
 			public const int background_floating_material_dark = 2131492871;
@@ -1222,6 +1216,36 @@ namespace ClujBikeLite
 			
 			// aapt resource value: 0x7f0c0012
 			public const int button_material_light = 2131492882;
+			
+			// aapt resource value: 0x7f0c0049
+			public const int colorAccent = 2131492937;
+			
+			// aapt resource value: 0x7f0c004f
+			public const int colorActivated_color = 2131492943;
+			
+			// aapt resource value: 0x7f0c004e
+			public const int colorDivider = 2131492942;
+			
+			// aapt resource value: 0x7f0c004a
+			public const int colorLightPrimary = 2131492938;
+			
+			// aapt resource value: 0x7f0c0046
+			public const int colorPrimary = 2131492934;
+			
+			// aapt resource value: 0x7f0c0047
+			public const int colorPrimaryDark = 2131492935;
+			
+			// aapt resource value: 0x7f0c0048
+			public const int colorPrimaryRipple = 2131492936;
+			
+			// aapt resource value: 0x7f0c004c
+			public const int colorPrimaryText = 2131492940;
+			
+			// aapt resource value: 0x7f0c004d
+			public const int colorSecondaryText = 2131492941;
+			
+			// aapt resource value: 0x7f0c004b
+			public const int colorTextIcon = 2131492939;
 			
 			// aapt resource value: 0x7f0c003b
 			public const int design_bottom_navigation_shadow_color = 2131492923;
@@ -1274,9 +1298,6 @@ namespace ClujBikeLite
 			// aapt resource value: 0x7f0c0016
 			public const int dim_foreground_material_light = 2131492886;
 			
-			// aapt resource value: 0x7f0c004e
-			public const int divider = 2131492942;
-			
 			// aapt resource value: 0x7f0c0017
 			public const int foreground_material_dark = 2131492887;
 			
@@ -1288,9 +1309,6 @@ namespace ClujBikeLite
 			
 			// aapt resource value: 0x7f0c001a
 			public const int highlighted_text_material_light = 2131492890;
-			
-			// aapt resource value: 0x7f0c004a
-			public const int lightPrimary = 2131492938;
 			
 			// aapt resource value: 0x7f0c001b
 			public const int material_blue_grey_800 = 2131492891;
@@ -1337,18 +1355,6 @@ namespace ClujBikeLite
 			// aapt resource value: 0x7f0c0028
 			public const int notification_material_background_media_default_color = 2131492904;
 			
-			// aapt resource value: 0x7f0c0046
-			public const int primary = 2131492934;
-			
-			// aapt resource value: 0x7f0c0047
-			public const int primaryDark = 2131492935;
-			
-			// aapt resource value: 0x7f0c0048
-			public const int primaryRipple = 2131492936;
-			
-			// aapt resource value: 0x7f0c004c
-			public const int primaryText = 2131492940;
-			
 			// aapt resource value: 0x7f0c0029
 			public const int primary_dark_material_dark = 2131492905;
 			
@@ -1379,9 +1385,6 @@ namespace ClujBikeLite
 			// aapt resource value: 0x7f0c0032
 			public const int ripple_material_light = 2131492914;
 			
-			// aapt resource value: 0x7f0c004d
-			public const int secondaryText = 2131492941;
-			
 			// aapt resource value: 0x7f0c0033
 			public const int secondary_text_default_material_dark = 2131492915;
 			
@@ -1411,9 +1414,6 @@ namespace ClujBikeLite
 			
 			// aapt resource value: 0x7f0c003a
 			public const int switch_thumb_normal_material_light = 2131492922;
-			
-			// aapt resource value: 0x7f0c004b
-			public const int textIcon = 2131492939;
 			
 			static Color()
 			{
@@ -4018,9 +4018,6 @@ namespace ClujBikeLite
 			
 			// aapt resource value: 0x7f0a017a
 			public const int Theme_MyTheme = 2131362170;
-			
-			// aapt resource value: 0x7f0a017c
-			public const int Theme_MyTheme_ActionBar = 2131362172;
 			
 			// aapt resource value: 0x7f0a017b
 			public const int Theme_MyTheme_Base = 2131362171;

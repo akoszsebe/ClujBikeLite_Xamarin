@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:minHeight="?attr/actionBarSize"
-        android:background="@color/primary"
+        android:background="@color/colorPrimary"
         android:text="ClujBikeLite"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
@@ -30,7 +30,7 @@
             android:layout_height="56dp"
             android:layout_gravity="start"
             android:layout_alignParentBottom="true"
-            android:background="@color/primary"
+            android:background="@color/colorPrimary"
             app:itemIconTint="@drawable/nav_item_colors"
             app:itemTextColor="@drawable/nav_item_colors"
             app:elevation="16dp"
