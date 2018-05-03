@@ -77,8 +77,10 @@ namespace ClujBikeLite.Adapters
                     ISharedPreferences sharedPref = activity.GetSharedPreferences("favorite_stations", FileCreationMode.Private);
                     ICollection<string> favorite_stations = sharedPref.GetStringSet("favorite_stations", new List<string>());
                     ISharedPreferencesEditor editor = sharedPref.Edit();
-                    favorite_stations.Remove(station.station.StationName);
-                    editor.PutStringSet("favorite_stations", favorite_stations);
+                    List<string> new_favorite_stations = new List<string>();
+                    new_favorite_stations.AddRange(favorite_stations);
+                    new_favorite_stations.Remove(station.station.StationName);
+                    editor.PutStringSet("favorite_stations", new_favorite_stations);
                     editor.Commit();
                     itemList.Remove(station);
                     this.NotifyDataSetChanged();
@@ -91,8 +93,10 @@ namespace ClujBikeLite.Adapters
                     ISharedPreferences sharedPref = activity.GetSharedPreferences("favorite_stations", FileCreationMode.Private);
                     ICollection<string> favorite_stations = sharedPref.GetStringSet("favorite_stations", new List<string>());
                     ISharedPreferencesEditor editor = sharedPref.Edit();
-                    favorite_stations.Add(station.station.StationName);
-                    editor.PutStringSet("favorite_stations", favorite_stations);
+                    List<string> new_favorite_stations = new List<string>();
+                    new_favorite_stations.AddRange(favorite_stations);
+                    new_favorite_stations.Add(station.station.StationName);
+                    editor.PutStringSet("favorite_stations", new_favorite_stations);
                     editor.Commit();
                     itemList.Find(x => x.station == station.station).is_favorite = true;
                     this.NotifyDataSetChanged();
