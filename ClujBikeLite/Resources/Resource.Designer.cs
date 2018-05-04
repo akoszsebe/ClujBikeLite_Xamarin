@@ -1217,8 +1217,8 @@ namespace ClujBikeLite
 			// aapt resource value: 0x7f0c0012
 			public const int button_material_light = 2131492882;
 			
-			// aapt resource value: 0x7f0c0049
-			public const int colorAccent = 2131492937;
+			// aapt resource value: 0x7f0c004b
+			public const int colorAccent = 2131492939;
 			
 			// aapt resource value: 0x7f0c004f
 			public const int colorActivated_color = 2131492943;
@@ -1226,26 +1226,26 @@ namespace ClujBikeLite
 			// aapt resource value: 0x7f0c004e
 			public const int colorDivider = 2131492942;
 			
-			// aapt resource value: 0x7f0c004a
-			public const int colorLightPrimary = 2131492938;
-			
 			// aapt resource value: 0x7f0c0046
 			public const int colorPrimary = 2131492934;
 			
-			// aapt resource value: 0x7f0c0047
-			public const int colorPrimaryDark = 2131492935;
-			
 			// aapt resource value: 0x7f0c0048
-			public const int colorPrimaryRipple = 2131492936;
+			public const int colorPrimaryDark = 2131492936;
 			
-			// aapt resource value: 0x7f0c004c
-			public const int colorPrimaryText = 2131492940;
+			// aapt resource value: 0x7f0c0047
+			public const int colorPrimaryLight = 2131492935;
+			
+			// aapt resource value: 0x7f0c004a
+			public const int colorPrimaryRipple = 2131492938;
+			
+			// aapt resource value: 0x7f0c0049
+			public const int colorPrimaryText = 2131492937;
 			
 			// aapt resource value: 0x7f0c004d
 			public const int colorSecondaryText = 2131492941;
 			
-			// aapt resource value: 0x7f0c004b
-			public const int colorTextIcon = 2131492939;
+			// aapt resource value: 0x7f0c004c
+			public const int colorTextIcon = 2131492940;
 			
 			// aapt resource value: 0x7f0c003b
 			public const int design_bottom_navigation_shadow_color = 2131492923;
@@ -3715,6 +3715,12 @@ namespace ClujBikeLite
 			
 			// aapt resource value: 0x7f0a003e
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131361854;
+			
+			// aapt resource value: 0x7f0a017c
+			public const int TabLayoutStyle = 2131362172;
+			
+			// aapt resource value: 0x7f0a017d
+			public const int TabTextAppearance = 2131362173;
 			
 			// aapt resource value: 0x7f0a00ce
 			public const int TextAppearance_AppCompat = 2131361998;

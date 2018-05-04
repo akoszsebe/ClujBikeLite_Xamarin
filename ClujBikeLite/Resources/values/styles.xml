@@ -5,28 +5,28 @@
   <!-- Base theme applied no matter what API -->
   <style name="Theme.MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="windowNoTitle">false</item>
-    <!--We will be using the toolbar so no need to show ActionBar-->
     <item name="windowActionBar">true</item>
-
-    <item name="windowActionModeOverlay">true</item>
-
-    <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
-    <!-- colorPrimary is used for the default action bar background -->
+    <item name="windowActionModeOverlay">false</item>
     <item name="colorPrimary">@color/colorPrimary</item>
-    <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    <!-- colorAccent is used as the default value for colorControlActivated
-         which is used to tint widgets -->
     <item name="colorAccent">@color/colorAccent</item>
-    <!-- You can also set colorControlNormal, colorControlActivated
-         colorControlHighlight and colorSwitchThumbNormal. -->
 
 
-    <!-- Option to hide the drop shadow here
-    
-      <item name="actionBarStyle">@style/MyTheme.ActionBar</item>
-      <item name="android:windowContentOverlay">@null</item>
-    -->
+  </style>
+
+  <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+    <item name="tabIndicatorColor">#ffffff</item>
+    <item name="tabIndicatorHeight">2dp</item>
+    <item name="tabPaddingStart">8dp</item>
+    <item name="tabPaddingEnd">8dp</item>
+    <item name="tabBackground">?attr/selectableItemBackground</item>
+    <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    <item name="tabSelectedTextColor">@android:color/white</item>
+  </style>
+
+  <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+    <item name="android:textColor">#ffffff</item>
+    <item name="textAllCaps">true</item>
   </style>
 
 </resources>
