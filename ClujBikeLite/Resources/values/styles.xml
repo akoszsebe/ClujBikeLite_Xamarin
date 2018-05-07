@@ -4,14 +4,18 @@
   </style>
   <!-- Base theme applied no matter what API -->
   <style name="Theme.MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
-    <item name="windowNoTitle">false</item>
-    <item name="windowActionBar">true</item>
-    <item name="windowActionModeOverlay">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    
+    <item name="windowActionModeOverlay">true</item>
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
 
+  </style>
 
+  <style name="Theme.MyTheme.ActionBar" parent="style/Widget.AppCompat.Light.ActionBar.Solid">
+    <item name="elevation">0dp</item>
   </style>
 
   <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">

@@ -21,14 +21,14 @@ namespace ClujBikeLite
 
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Home);
-            //var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            //if (toolbar != null)
-            //{
-            //    SetSupportActionBar(toolbar);
-            //    SupportActionBar.SetDisplayHomeAsUpEnabled(false);
-            //    SupportActionBar.SetHomeButtonEnabled(false);
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            if (toolbar != null)
+            {
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+                SupportActionBar.SetHomeButtonEnabled(false);
 
-            //}
+            }
 
             bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
 
